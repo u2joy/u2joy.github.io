@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="什么是react react有那些特性 什么是jsx 真实DOM和虚拟DOM的区别 state和props的区别 我们能直接改变组件的状态么？Can we change the state of the component directly？ 受控组件和非受控组件的区别 React 组件有哪些不同的样式选项？What are different options to style a React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReactQuestions">
+<meta property="og:url" content="https://lik3yoo.github.io/2024/06/18/ReactQuestions/index.html">
+<meta property="og:site_name" content="lik3yoo">
+<meta property="og:description" content="什么是react react有那些特性 什么是jsx 真实DOM和虚拟DOM的区别 state和props的区别 我们能直接改变组件的状态么？Can we change the state of the component directly？ 受控组件和非受控组件的区别 React 组件有哪些不同的样式选项？What are different options to style a React">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-03T00:49:05.255Z">
+<meta property="article:author" content="lik3yoo">
+<meta property="article:tag" content="代码">
+<meta property="article:tag" content="react">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>ReactQuestions</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="lik3yoo" type="application/rss+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
+     --><!--
+       --><li><a href="/week/">Week</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/06/20/%E9%80%9A%E9%80%8F/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/06/13/%E5%B0%91%E6%9C%89%E4%BA%BA%E8%B5%B0%E7%9A%84%E8%B7%AF/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/06/18/ReactQuestions/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&text=ReactQuestions"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&is_video=false&description=ReactQuestions"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ReactQuestions&body=Check out this article: https://lik3yoo.github.io/2024/06/18/ReactQuestions/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&name=ReactQuestions&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&t=ReactQuestions"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR"><span class="toc-number">1.</span> <span class="toc-text">SSR</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        ReactQuestions
+    </h1>
+
+
+
+    <div class="meta">
+      <!-- <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">lik3yoo</span>
+      </span> -->
+      <!-- 
+    <div class="postdate">
+      
+        <time datetime="2024-06-17T16:00:00.000Z" class="dt-published" itemprop="datePublished">2024-06-18</time>
+        
+      
+    </div>
+ -->
+
+
+  <div class="postdate">
+    
+      <time datetime="2024-06-17T16:00:00.000Z" class="dt-published" itemprop="datePublished">
+        2024-06-18 星期二
+      </time>
+      
+    
+  </div>
+
+
+      <!-- 
+ -->
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/react/" rel="tag">react</a>, <a class="p-category" href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag">代码</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <ul>
+<li>什么是react</li>
+<li>react有那些特性</li>
+<li>什么是jsx</li>
+<li>真实DOM和虚拟DOM的区别</li>
+<li>state和props的区别</li>
+<li>我们能直接改变组件的状态么？Can we change the state of the component directly？</li>
+<li>受控组件和非受控组件的区别</li>
+<li>React 组件有哪些不同的样式选项？What are different options to style a React component?</li>
+<li>什么是PureComponents</li>
+<li>什么是合成事件</li>
+<li>key在react中的作用</li>
+<li>什么是refs</li>
+<li>什么是forwardRef</li>
+<li>什么是fiber</li>
+<li>react和react-dom包的不同</li>
+<li>class componets和function components的不同</li>
+<li>什么是高阶组件（HOCs)</li>
+<li>什么是react hooks</li>
+<li>如何在react中渲染HTML</li>
+<li>什么是react中的上下文？What is Context in React?</li>
+<li>What is Reconciliation in React?</li>
+<li>What could be the reasons for un-necessary re-renders in React?</li>
+<li>如何处理prop传递，过度的prop传递有什么缺点？How does React handle prop drilling, and what are the downsides of excessive prop drilling?</li>
+<li>useEffect的目的</li>
+<li>useMemo的目的</li>
+<li>useContext的目的</li>
+<li>解释一下错误边界的概念。Explain the concept of error boundaries in React.</li>
+<li>解释一下react中的fragments</li>
+<li>What are portals in React?</li>
+<li>What is Concurrent React (Concurrent Mode)?</li>
+<li>介绍一下useTransition?What is the <code>useTransition</code> hook?</li>
+<li>介绍一下flushSync的目的</li>
+<li>How to render React components as static HTML string?</li>
+<li>What are Server Components in React?</li>
+<li>如何懒加载？How to lazy load components in React?</li>
+<li>What is <code>Suspense</code> in React?<ul>
+<li>用于在子组件加载完成之前显示的内容</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> react的虚拟DOM如何工作？How React Virtual DOM works?</li>
+<li>生命周期？<ul>
+<li>function components<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用useEffect实现初始化，卸载，更新</span></span><br><span class="line"> <span class="title function_">useEffect</span>(<span class="function">()=&gt;</span>&#123;&#125;, [deps])</span><br></pre></td></tr></table></figure></li>
+<li>class component<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">class</span> <span class="title class_">Com</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="title function_">constructor</span>(<span class="params">props</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">componentDidMount</span>(<span class="params"></span>)&#123;&#125; <span class="comment">// 挂载</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">getSnapshotBeforeUpdate</span>(<span class="params">prevProps, prevState</span>)&#123;&#125;</span><br><span class="line"><span class="title function_">shouldComponentUpdate</span>(<span class="params">nextProps, nextState, nextContext</span>)&#123;&#125; <span class="comment">// 更新</span></span><br><span class="line"><span class="title function_">componentDidUpdate</span>(<span class="params">prevProps, prevState</span>)&#123;&#125; <span class="comment">// 更新</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">componentWillUnmount</span>(<span class="params"></span>)&#123;&#125; <span class="comment">// 卸载</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="title function_">getDerivedStateFromProps</span>(<span class="params"></span>)&#123;&#125; <span class="comment">// 错误处理</span></span><br><span class="line"><span class="keyword">static</span> <span class="title function_">getDerivedStateFromError</span>(<span class="params"></span>)&#123;&#125; <span class="comment">// 错误处理</span></span><br><span class="line"><span class="title function_">componentDidCatch</span>(<span class="params">error, info</span>)&#123;&#125; <span class="comment">// 捕获错误</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">getSnapshotBeforeUpdate</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">	<span class="title function_">constructor</span>(<span class="params">props</span>)&#123;</span><br><span class="line">		<span class="variable language_">super</span>(props)</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">state</span> = &#123; <span class="attr">hasError</span>: <span class="literal">false</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">static</span> <span class="title function_">getDerivedStateFromError</span>(<span class="params">error</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123; <span class="attr">hasError</span>: <span class="literal">true</span> &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="title function_">componentDidCatch</span>(<span class="params">error, info</span>)&#123;</span><br><span class="line">		<span class="title function_">logErrrorToMyService</span>(error, info.<span class="property">componentsStack</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">hasError</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">fallback</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">children</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>有状态组件和无状态组件的区别？<ul>
+<li>有无状态</li>
+<li>前者可以在状态变化时重新渲染，无状态组件只能通过传递给他们的props改变时重新渲染</li>
+</ul>
+</li>
+<li>Why you shouldn’t use <code>index</code> as a key in React lists and iterators?<ul>
+<li>react通过key来达到复用组件，使用index作为key的时候，会导致不必要的重新渲染，在新增、删除的时候也可能会导致不确定的错误</li>
+</ul>
+</li>
+<li>React组件的命名约定是什么？What is the naming convention for React components?<ul>
+<li>使用驼峰</li>
+<li>见名知意</li>
+</ul>
+</li>
+<li>如何渲染一个列表？<ul>
+<li>使用数组map</li>
+<li>注意key</li>
+</ul>
+</li>
+<li>如何创建自定义hooks？<ul>
+<li>必须以use开头</li>
+<li>可以使用别的hooks</li>
+<li>可以返回状态、状态更新函数和其他有用的值</li>
+<li>可以将重用的逻辑提取到一个独立的函数中，是组件代码更加简洁和易于维护</li>
+</ul>
+</li>
+<li>What is Strict Mode in React and why is it useful?<ul>
+<li><a target="_blank" rel="noopener" href="https://zh-hans.react.dev/reference/react/StrictMode"><code>&lt;StrictMode&gt;</code></a></li>
+</ul>
+</li>
+<li>如何调查运行缓慢的 React 应用程序并找出性能瓶颈？How do you investigate a slow React app and identify performance bottlenecks?<ul>
+<li>使用React DevTools Profiler</li>
+<li>识别不必要的重新渲染和占用资源比较高的组件</li>
+<li>避免<code>useEffect</code>中没必要的依赖</li>
+<li>使用webpack分析包大小</li>
+<li>优化图片和静态资源<ul>
+<li>确保图片适宜使用场景</li>
+<li>对不经常变动的资源使用CDN</li>
+</ul>
+</li>
+<li>懒加载</li>
+<li>检查网络状况</li>
+<li>使用生产模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h2><ul>
+<li>服务端组件和客户端组件的不同</li>
+<li>How do React Server Components handle data fetching?</li>
+<li>What are <code>use client</code> and <code>use server</code> directives?</li>
+<li>Can you use hooks in Server Components?</li>
+<li>What is Hydration in React？</li>
+</ul>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives/">Archives</a></li>
+        
+          <li><a href="/week/">Week</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR"><span class="toc-number">1.</span> <span class="toc-text">SSR</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/06/18/ReactQuestions/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&text=ReactQuestions"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&is_video=false&description=ReactQuestions"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ReactQuestions&body=Check out this article: https://lik3yoo.github.io/2024/06/18/ReactQuestions/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&title=ReactQuestions"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&name=ReactQuestions&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/06/18/ReactQuestions/&t=ReactQuestions"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024
+    lik3yoo
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
+     --><!--
+       --><li><a href="/week/">Week</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'lik3yoo/comments';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>

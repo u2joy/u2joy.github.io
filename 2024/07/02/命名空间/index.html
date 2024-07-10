@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="在 TypeScript 中，namespace 的主要功能包括：  组织代码：  将相关的代码分组在一起，使代码结构更加清晰和易于维护。   避免全局命名空间污染：  通过将变量、函数、类等放入命名空间中，避免全局命名空间的污染，减少命名冲突。   封装复杂逻辑：  封装复杂的业务逻辑或模块化组件，提供一个清晰的接口。   提供类型定义：  用于定义第三方库或全局对象的类型，特别是在第三方库没有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="命名空间">
+<meta property="og:url" content="https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/index.html">
+<meta property="og:site_name" content="lik3yoo">
+<meta property="og:description" content="在 TypeScript 中，namespace 的主要功能包括：  组织代码：  将相关的代码分组在一起，使代码结构更加清晰和易于维护。   避免全局命名空间污染：  通过将变量、函数、类等放入命名空间中，避免全局命名空间的污染，减少命名冲突。   封装复杂逻辑：  封装复杂的业务逻辑或模块化组件，提供一个清晰的接口。   提供类型定义：  用于定义第三方库或全局对象的类型，特别是在第三方库没有">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-07-02T12:34:24.234Z">
+<meta property="article:author" content="lik3yoo">
+<meta property="article:tag" content="代码">
+<meta property="article:tag" content="TypeScript">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>命名空间</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="lik3yoo" type="application/rss+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
+     --><!--
+       --><li><a href="/week/">Week</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2024/07/02/useTransition/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/07/02/%E5%9C%A8TypeScript%E4%B8%AD%E7%BB%99%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%86%99%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&text=命名空间"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&is_video=false&description=命名空间"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=命名空间&body=Check out this article: https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&name=命名空间&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&t=命名空间"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">具体应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">示例代码</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        命名空间
+    </h1>
+
+
+
+    <div class="meta">
+      <!-- <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">lik3yoo</span>
+      </span> -->
+      <!-- 
+    <div class="postdate">
+      
+        <time datetime="2024-07-01T16:00:00.000Z" class="dt-published" itemprop="datePublished">2024-07-02</time>
+        
+      
+    </div>
+ -->
+
+
+  <div class="postdate">
+    
+      <time datetime="2024-07-01T16:00:00.000Z" class="dt-published" itemprop="datePublished">
+        2024-07-02 星期二
+      </time>
+      
+    
+  </div>
+
+
+      <!-- 
+ -->
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/TypeScript/" rel="tag">TypeScript</a>, <a class="p-category" href="/tags/%E4%BB%A3%E7%A0%81/" rel="tag">代码</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>在 TypeScript 中，<code>namespace</code> 的主要功能包括：</p>
+<ol>
+<li><p><strong>组织代码</strong>：</p>
+<ul>
+<li>将相关的代码分组在一起，使代码结构更加清晰和易于维护。</li>
+</ul>
+</li>
+<li><p><strong>避免全局命名空间污染</strong>：</p>
+<ul>
+<li>通过将变量、函数、类等放入命名空间中，避免全局命名空间的污染，减少命名冲突。</li>
+</ul>
+</li>
+<li><p><strong>封装复杂逻辑</strong>：</p>
+<ul>
+<li>封装复杂的业务逻辑或模块化组件，提供一个清晰的接口。</li>
+</ul>
+</li>
+<li><p><strong>提供类型定义</strong>：</p>
+<ul>
+<li>用于定义第三方库或全局对象的类型，特别是在第三方库没有提供类型定义时。</li>
+</ul>
+</li>
+<li><p><strong>支持嵌套命名空间</strong>：</p>
+<ul>
+<li>支持命名空间的嵌套，进一步细分和组织代码。</li>
+</ul>
+</li>
+<li><p><strong>支持合并</strong>：</p>
+<ul>
+<li>可以在多个文件中定义同名的命名空间，TypeScript 会自动将它们合并。</li>
+</ul>
+</li>
+</ol>
+<h3 id="具体应用场景"><a href="#具体应用场景" class="headerlink" title="具体应用场景"></a>具体应用场景</h3><ol>
+<li><p><strong>工具函数库</strong>：</p>
+<ul>
+<li>组织和分组常用的工具函数。</li>
+</ul>
+</li>
+<li><p><strong>复杂业务逻辑</strong>：</p>
+<ul>
+<li>封装游戏逻辑、数据处理逻辑等。</li>
+</ul>
+</li>
+<li><p><strong>常量和枚举</strong>：</p>
+<ul>
+<li>分组常量和枚举，保持代码整洁。</li>
+</ul>
+</li>
+<li><p><strong>第三方库类型定义</strong>：</p>
+<ul>
+<li>为没有类型定义的第三方库编写类型声明。</li>
+</ul>
+</li>
+</ol>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 工具函数库</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Utils</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">formatDate</span>(<span class="params"><span class="attr">date</span>: <span class="title class_">Date</span></span>): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> date.<span class="title function_">toISOString</span>().<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">generateRandomNumber</span>(<span class="params"></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装复杂业务逻辑</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Game</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">Player</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> <span class="attr">name</span>: <span class="built_in">string</span>, <span class="keyword">public</span> <span class="attr">score</span>: <span class="built_in">number</span></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">displayInfo</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;<span class="variable language_">this</span>.name&#125;</span> - Score: <span class="subst">$&#123;<span class="variable language_">this</span>.score&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">start</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Game started!&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 常量和枚举</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Constants</span> &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">const</span> <span class="variable constant_">MAX_USERS</span> = <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">const</span> <span class="variable constant_">API_ENDPOINT</span> = <span class="string">&#x27;https://api.example.com&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">enum</span> <span class="title class_">UserRole</span> &#123;</span><br><span class="line">    <span class="title class_">Admin</span>,</span><br><span class="line">    <span class="title class_">User</span>,</span><br><span class="line">    <span class="title class_">Guest</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三方库类型定义</span></span><br><span class="line"><span class="keyword">declare</span> namespace _ &#123;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> chunk&lt;T&gt;(<span class="attr">array</span>: T[], <span class="attr">size</span>: <span class="built_in">number</span>): T[][];</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">random</span>(<span class="params"><span class="attr">min</span>: <span class="built_in">number</span>, <span class="attr">max</span>: <span class="built_in">number</span></span>): <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过这些功能和应用场景，可以看出 <code>namespace</code> 在 TypeScript 中的实用性和灵活性。尽管在现代 TypeScript 项目中更推荐使用 ES6 模块，但在特定的场景下，命名空间仍然是一个强大的工具。</p>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/archives/">Archives</a></li>
+        
+          <li><a href="/week/">Week</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">具体应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">示例代码</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&text=命名空间"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&is_video=false&description=命名空间"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=命名空间&body=Check out this article: https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&title=命名空间"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&name=命名空间&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/07/02/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4/&t=命名空间"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024
+    lik3yoo
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
+     --><!--
+       --><li><a href="/week/">Week</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'lik3yoo/comments';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>
