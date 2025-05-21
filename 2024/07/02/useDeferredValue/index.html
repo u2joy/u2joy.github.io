@@ -9,13 +9,13 @@
     <meta name="description" content="介绍一下react中的useDeferredValue及其常用用法useDeferredValue 是 React 18 中引入的一个 Hook，它允许你推迟某个值的更新，从而避免频繁的重新渲染。它主要用于处理用户输入等高频率的事件，使得应用在用户输入时保持更高的响应速度。 用法语法1const deferredValue &#x3D; useDeferredValue(value);  参数 value：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="useDeferredValue">
-<meta property="og:url" content="https://lik3yoo.github.io/2024/07/02/useDeferredValue/index.html">
-<meta property="og:site_name" content="lik3yoo">
+<meta property="og:url" content="https://u2joy.github.io/2024/07/02/useDeferredValue/index.html">
+<meta property="og:site_name" content="许国明">
 <meta property="og:description" content="介绍一下react中的useDeferredValue及其常用用法useDeferredValue 是 React 18 中引入的一个 Hook，它允许你推迟某个值的更新，从而避免频繁的重新渲染。它主要用于处理用户输入等高频率的事件，使得应用在用户输入时保持更高的响应速度。 用法语法1const deferredValue &#x3D; useDeferredValue(value);  参数 value：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-07-02T08:43:42.940Z">
-<meta property="article:author" content="lik3yoo">
+<meta property="article:modified_time" content="2024-07-02T08:43:42.000Z">
+<meta property="article:author" content="许国明">
 <meta property="article:tag" content="代码">
 <meta name="twitter:card" content="summary">
     
@@ -56,7 +56,7 @@
     
 	<!-- mathjax -->
 	
-<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="lik3yoo" type="application/rss+xml">
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="许国明" type="application/rss+xml">
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -71,9 +71,11 @@
         <!--
        --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/archives/">Archives</a></li><!--
+       --><li><a href="/tags/">Tags</a></li><!--
      --><!--
        --><li><a href="/week.html">Week</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
      --><!--
        --><li><a href="/about.html">About</a></li><!--
      -->
@@ -99,17 +101,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/07/02/useDeferredValue/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&text=useDeferredValue"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&is_video=false&description=useDeferredValue"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=useDeferredValue&body=Check out this article: https://lik3yoo.github.io/2024/07/02/useDeferredValue/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&name=useDeferredValue&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&t=useDeferredValue"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://u2joy.github.io/2024/07/02/useDeferredValue/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&text=useDeferredValue"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&is_video=false&description=useDeferredValue"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=useDeferredValue&body=Check out this article: https://u2joy.github.io/2024/07/02/useDeferredValue/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&name=useDeferredValue&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://u2joy.github.io/2024/07/02/useDeferredValue/&t=useDeferredValue"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -136,7 +138,7 @@
 
     <div class="meta">
       <!-- <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">lik3yoo</span>
+        <span class="p-name" itemprop="name">许国明</span>
       </span> -->
       <!-- 
     <div class="postdate">
@@ -232,9 +234,11 @@
         
           <li><a href="/">Home</a></li>
         
-          <li><a href="/archives/">Archives</a></li>
+          <li><a href="/tags/">Tags</a></li>
         
           <li><a href="/week.html">Week</a></li>
+        
+          <li><a href="/archives/">Archives</a></li>
         
           <li><a href="/about.html">About</a></li>
         
@@ -250,17 +254,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://lik3yoo.github.io/2024/07/02/useDeferredValue/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&text=useDeferredValue"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&is_video=false&description=useDeferredValue"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=useDeferredValue&body=Check out this article: https://lik3yoo.github.io/2024/07/02/useDeferredValue/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&name=useDeferredValue&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://lik3yoo.github.io/2024/07/02/useDeferredValue/&t=useDeferredValue"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://u2joy.github.io/2024/07/02/useDeferredValue/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&text=useDeferredValue"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&is_video=false&description=useDeferredValue"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=useDeferredValue&body=Check out this article: https://u2joy.github.io/2024/07/02/useDeferredValue/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&title=useDeferredValue"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://u2joy.github.io/2024/07/02/useDeferredValue/&name=useDeferredValue&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://u2joy.github.io/2024/07/02/useDeferredValue/&t=useDeferredValue"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -283,8 +287,8 @@
     Copyright &copy;
     
     
-    2024
-    lik3yoo
+    2024-2025
+    许国明
   </div>
   <div class="footer-right">
     <nav>
@@ -292,9 +296,11 @@
         <!--
        --><li><a href="/">Home</a></li><!--
      --><!--
-       --><li><a href="/archives/">Archives</a></li><!--
+       --><li><a href="/tags/">Tags</a></li><!--
      --><!--
        --><li><a href="/week.html">Week</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Archives</a></li><!--
      --><!--
        --><li><a href="/about.html">About</a></li><!--
      -->
@@ -357,7 +363,7 @@
 <!-- utterances Comments -->
 
     <script type="text/javascript">
-      var utterances_repo = 'lik3yoo/comments';
+      var utterances_repo = 'u2joy/comments';
       var utterances_issue_term = 'pathname';
       var utterances_label = 'Comment';
       var utterances_theme = 'github-dark';
@@ -375,6 +381,7 @@
           (document.getElementById('utterances_thread')).appendChild(script);
       }());
   </script>
+
 
 </body>
 </html>
