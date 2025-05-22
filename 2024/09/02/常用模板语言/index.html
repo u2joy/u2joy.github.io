@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS: &lt;%&#x3D; variable %&gt; Mustache: &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用模板语言">
+<meta property="og:url" content="https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/index.html">
+<meta property="og:site_name" content="小明的博客">
+<meta property="og:description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS: &lt;%&#x3D; variable %&gt; Mustache: &amp;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-22T03:14:46.309Z">
+<meta property="article:author" content="小明">
+<meta property="article:tag" content="node-lib">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>常用模板语言</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="小明的博客" type="application/rss+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        <header id="header">
+  <a class="u-url u-uid" href="/">
+  
+    
+      <img id="logo" alt class="u-logo" src="/images/logo.png" />
+    
+  
+    <div id="title">
+      <h1 class="p-name" style="margin-bottom: 10px;">小明的博客</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-2x"></i></a>
+      </li>
+      <!--
+     -->
+        <li class=""><a href="/">Home</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/tags">Tags</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/week">Week</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/archives">Archives</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/about">About</a></li><!--
+   -->
+    </ul>
+  </div>
+</header>
+
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        常用模板语言
+    </h1>
+
+
+
+    <div class="meta">
+      <!-- <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">小明</span>
+      </span> -->
+      <!-- 
+    <div class="postdate">
+      
+        <time datetime="2024-09-01T16:00:00.000Z" class="dt-published" itemprop="datePublished">2024-09-02</time>
+        
+      
+    </div>
+ -->
+
+
+  <div class="postdate">
+    
+      <time datetime="2024-09-01T16:00:00.000Z" class="dt-published" itemprop="datePublished">
+        2024-09-02 星期一
+      </time>
+      
+    
+  </div>
+
+
+      <!-- 
+ -->
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/node-lib/" rel="tag">node-lib</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：</p>
+<ol>
+<li><p>变量插值<br>用于在模板中插入变量的值。</p>
+<ul>
+<li>Handlebars: <code>&#123;&#123;variable&#125;&#125;</code></li>
+<li>EJS: <code>&lt;%= variable %&gt;</code></li>
+<li>Mustache: <code>&#123;&#123;variable&#125;&#125;</code></li>
+</ul>
+</li>
+<li><p>条件语句<br>用于根据条件显示不同的内容。</p>
+<ul>
+<li><p>Handlebars:</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">if</span></span> condition&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 其他内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">if</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>EJS:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (condition) &#123; %&gt;</span><br><span class="line">  // 内容</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">  // 其他内容</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>循环&#x2F;迭代<br>用于遍历数组或对象。</p>
+<ul>
+<li><p>Handlebars:</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><span class="template-variable">&#123;&#123;<span class="name">this</span>&#125;&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>EJS:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% items.forEach(function(item) &#123; %&gt;</span><br><span class="line">  &lt;li&gt;&lt;%= item %&gt;&lt;/li&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>注释<br>用于在模板中添加注释，不会被渲染。</p>
+<ul>
+<li>Handlebars: <code>&#123;&#123;!-- 注释 --&#125;&#125;</code></li>
+<li>EJS: <code>&lt;%# 注释 %&gt;</code></li>
+</ul>
+</li>
+<li><p>部分模板&#x2F;包含<br>用于引入其他模板文件。</p>
+<ul>
+<li>Handlebars: <code>&#123;&#123;> partialName&#125;&#125;</code></li>
+<li>EJS: <code>&lt;%- include(&#39;partial&#39;) %&gt;</code></li>
+</ul>
+</li>
+<li><p>转义与非转义输出<br>控制是否对输出进行 HTML 转义。</p>
+<ul>
+<li>Handlebars:<br><code>&#123;&#123;variable&#125;&#125;</code> (转义)<br><code>&#123;&#123;&#123;variable&#125;&#125;&#125;</code> (非转义)</li>
+<li>EJS:<br><code>&lt;%= variable %&gt;</code> (转义)<br><code>&lt;%- variable %&gt;</code> (非转义)</li>
+</ul>
+</li>
+<li><p>自定义辅助函数<br>使用自定义函数扩展模板功能。</p>
+<ul>
+<li><p>Handlebars:</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name">customHelper</span> argument&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name">customHelper</span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>EJS: 可以直接在模板中调用 JavaScript 函数</p>
+</li>
+</ul>
+</li>
+<li><p>块表达式<br>用于创建可复用的模板块。</p>
+<ul>
+<li><p>Handlebars:</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">with</span></span> object&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  </span><span class="template-variable">&#123;&#123;<span class="name">property</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">with</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>存在性检查<br>检查变量是否存在。</p>
+<ul>
+<li>Handlebars: <code>&#123;&#123;#if variable&#125;&#125;...&#123;&#123;/if&#125;&#125;</code></li>
+<li>Mustache: <code>&#123;&#123;#variable&#125;&#125;...&#123;&#123;/variable&#125;&#125;</code></li>
+</ul>
+</li>
+<li><p>反向迭代<br>当列表为空时执行。</p>
+<ul>
+<li><p>Handlebars:</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  列表为空</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>原始 HTML<br>插入不经过转义的 HTML。</p>
+<ul>
+<li>Handlebars: <code>&#123;&#123;&#123;rawHtml&#125;&#125;&#125;</code></li>
+<li>EJS: <code>&lt;%- rawHtml %&gt;</code></li>
+</ul>
+</li>
+</ol>
+<p>这些语法元素使模板引擎能够灵活地处理各种动态内容生成场景。不同的模板引擎可能有略微不同的语法，但基本概念通常是相似的。选择合适的模板引擎和熟悉其语法可以大大提高前端或后端开发的效率。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/tags">Tags</a></li>
+        
+          <li><a href="/week">Week</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&text=常用模板语言"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&title=常用模板语言"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&is_video=false&description=常用模板语言"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=常用模板语言&body=Check out this article: https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&title=常用模板语言"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&title=常用模板语言"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&title=常用模板语言"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&title=常用模板语言"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&name=常用模板语言&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/&t=常用模板语言"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2025
+    小明
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags">Tags</a></li><!--
+     --><!--
+       --><li><a href="/week">Week</a></li><!--
+     --><!--
+       --><li><a href="/archives">Archives</a></li><!--
+     --><!--
+       --><li><a href="/about">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/build-timestamp.js"></script>
+
+
+<script src="/js/build-info.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+
+</body>
+</html>

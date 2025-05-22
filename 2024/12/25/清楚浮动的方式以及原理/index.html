@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="浮动最初是为了实现文字环绕效果而设计的，但后来被广泛用于布局。在现代 Web 开发中，建议优先使用 Flexbox 和 Grid 这样的现代布局方案，只在特定场景（如文字环绕图片）使用浮动。 浮动的影响 对浮动元素本身的影响：  脱离正常文档流 元素会尽可能向左或向右移动 宽度会收缩到内容宽度（如果没有指定宽度） 无法通过 margin: auto 实现水平居中 可能会与其他浮动元素并排显示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清楚浮动的方式以及原理">
+<meta property="og:url" content="https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="小明的博客">
+<meta property="og:description" content="浮动最初是为了实现文字环绕效果而设计的，但后来被广泛用于布局。在现代 Web 开发中，建议优先使用 Flexbox 和 Grid 这样的现代布局方案，只在特定场景（如文字环绕图片）使用浮动。 浮动的影响 对浮动元素本身的影响：  脱离正常文档流 元素会尽可能向左或向右移动 宽度会收缩到内容宽度（如果没有指定宽度） 无法通过 margin: auto 实现水平居中 可能会与其他浮动元素并排显示">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-24T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-22T01:49:41.528Z">
+<meta property="article:author" content="小明">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>清楚浮动的方式以及原理</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss2.xml" title="小明的博客" type="application/rss+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.</span> <span class="toc-text">浮动的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">清楚浮动的方式和原理</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        <header id="header">
+  <a class="u-url u-uid" href="/">
+  
+    
+      <img id="logo" alt class="u-logo" src="/images/logo.png" />
+    
+  
+    <div id="title">
+      <h1 class="p-name" style="margin-bottom: 10px;">小明的博客</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-2x"></i></a>
+      </li>
+      <!--
+     -->
+        <li class=""><a href="/">Home</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/tags">Tags</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/week">Week</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/archives">Archives</a></li><!--
+   --><!--
+     -->
+        <li class=""><a href="/about">About</a></li><!--
+   -->
+    </ul>
+  </div>
+</header>
+
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        清楚浮动的方式以及原理
+    </h1>
+
+
+
+    <div class="meta">
+      <!-- <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">小明</span>
+      </span> -->
+      <!-- 
+    <div class="postdate">
+      
+        <time datetime="2024-12-24T16:00:00.000Z" class="dt-published" itemprop="datePublished">2024-12-25</time>
+        
+      
+    </div>
+ -->
+
+
+  <div class="postdate">
+    
+      <time datetime="2024-12-24T16:00:00.000Z" class="dt-published" itemprop="datePublished">
+        2024-12-25 星期三
+      </time>
+      
+    
+  </div>
+
+
+      <!-- 
+ -->
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>浮动最初是为了实现文字环绕效果而设计的，但后来被广泛用于布局。在现代 Web 开发中，建议优先使用 Flexbox 和 Grid 这样的现代布局方案，只在特定场景（如文字环绕图片）使用浮动。</p>
+<h3 id="浮动的影响"><a href="#浮动的影响" class="headerlink" title="浮动的影响"></a>浮动的影响</h3><ol>
+<li><p><strong>对浮动元素本身的影响</strong>：</p>
+<ul>
+<li>脱离正常文档流</li>
+<li>元素会尽可能向左或向右移动</li>
+<li>宽度会收缩到内容宽度（如果没有指定宽度）</li>
+<li>无法通过 margin: auto 实现水平居中</li>
+<li>可能会与其他浮动元素并排显示</li>
+</ul>
+</li>
+<li><p><strong>对父元素的影响</strong>：</p>
+<ul>
+<li>父元素高度塌陷（最常见的问题）</li>
+<li>父元素的背景可能无法完全显示</li>
+<li>父元素的边框无法包裹浮动元素</li>
+<li>影响父元素中其他内容的布局</li>
+</ul>
+</li>
+<li><p><strong>对兄弟元素的影响</strong>：</p>
+<ul>
+<li><p><strong>内联元素（inline）和内联块元素（inline-block）</strong>：</p>
+<ul>
+<li>会环绕浮动元素</li>
+<li>文字会围绕浮动元素显示</li>
+<li>margin 和 padding 可能会被忽略</li>
+</ul>
+</li>
+<li><p><strong>块级元素（block）</strong>：</p>
+<ul>
+<li>盒模型位置不受浮动影响</li>
+<li>但其中的文本内容会受影响（环绕效果）</li>
+<li>可能会与浮动元素产生重叠</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>对布局的影响</strong>：</p>
+<ul>
+<li>破坏正常的文档流</li>
+<li>可能导致页面布局混乱</li>
+<li>影响响应式设计</li>
+<li>可能产生意外的间距问题</li>
+</ul>
+</li>
+<li><p><strong>对性能的影响</strong>：</p>
+<ul>
+<li>浮动元素需要额外的计算</li>
+<li>可能影响页面渲染速度</li>
+<li>增加布局复杂度</li>
+</ul>
+</li>
+<li><p><strong>其他特殊影响</strong>：</p>
+<ul>
+<li>可能影响打印样式</li>
+<li>在某些旧浏览器中可能出现兼容性问题</li>
+<li>可能影响 SEO（如果使用不当）</li>
+</ul>
+</li>
+</ol>
+<h3 id="清楚浮动的方式和原理"><a href="#清楚浮动的方式和原理" class="headerlink" title="清楚浮动的方式和原理"></a>清楚浮动的方式和原理</h3><p>(1) clear属性方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：通过clear属性强制元素向下移动到浮动元素下方。<br>优点：简单直接<br>缺点：需要添加额外的空标签</p>
+<p>(2) 触发BFC方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden; <span class="comment">/* 或 auto */</span></span><br><span class="line">  <span class="comment">/* 其他触发方式:</span></span><br><span class="line"><span class="comment">  display: flow-root;</span></span><br><span class="line"><span class="comment">  position: absolute;</span></span><br><span class="line"><span class="comment">  display: inline-block;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：BFC(块级格式化上下文)可以包含浮动,使父元素高度自动适应。<br>优点：不需要额外标签<br>缺点：可能影响滚动条或绝对定位</p>
+<p>(3) 伪元素方式(推荐)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  *<span class="attribute">zoom</span>: <span class="number">1</span>; <span class="comment">/* IE6-7 触发hasLayout */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：利用伪元素在父元素末尾创建一个块级元素并清除浮动。<br>优点：</p>
+<ul>
+<li>无需额外标签</li>
+<li>浏览器兼容性好</li>
+<li>不会影响其他样式</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/tags">Tags</a></li>
+        
+          <li><a href="/week">Week</a></li>
+        
+          <li><a href="/archives">Archives</a></li>
+        
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.</span> <span class="toc-text">浮动的影响</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">清楚浮动的方式和原理</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&text=清楚浮动的方式以及原理"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&title=清楚浮动的方式以及原理"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&is_video=false&description=清楚浮动的方式以及原理"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=清楚浮动的方式以及原理&body=Check out this article: https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&title=清楚浮动的方式以及原理"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&title=清楚浮动的方式以及原理"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&title=清楚浮动的方式以及原理"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&title=清楚浮动的方式以及原理"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&name=清楚浮动的方式以及原理&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://u2joy.github.io/2024/12/25/%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/&t=清楚浮动的方式以及原理"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2024-2025
+    小明
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags">Tags</a></li><!--
+     --><!--
+       --><li><a href="/week">Week</a></li><!--
+     --><!--
+       --><li><a href="/archives">Archives</a></li><!--
+     --><!--
+       --><li><a href="/about">About</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+
+<script src="/js/build-timestamp.js"></script>
+
+
+<script src="/js/build-info.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+
+</body>
+</html>
