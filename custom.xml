@@ -17,12 +17,35 @@
     <description>{{ config.description }}</description>
     <pubDate>{% if posts.first().updated %}{{ posts.first().updated.toDate().toLocaleString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) }}{% else %}{{ posts.first().date.toDate().toLocaleString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) }}{% endif %}</pubDate>
     <generator>http://hexo.io/</generator>
+    
     {% for post in posts.toArray() %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ post.permalink | uriencode }}</link>
       <guid>{{ post.permalink | uriencode }}</guid>
       <pubDate>{{ post.date.toDate().toLocaleString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' }) }}</pubDate>
+      {% if post.description %}
+      <description>{{ post.description }}</description>
+      {% elif post.excerpt %}
+      <description>{{ post.excerpt }}</description>
+      {% elif post.content %}
+      <description>{{ post.content.substring(0, 200) | striptags }}...</description>
+      {% else %}
+      <description></description>
+      {% endif %}
+      {% if config.feed.content and post.content %}
+      <content:encoded><![CDATA[{{ post.content | noControlChars | safe }}]]></content:encoded>
+      {% endif %}
+      {% if post.categories and post.categories.length > 0 %}
+      {% for category in post.categories.toArray() %}
+      <category>{{ category.name }}</category>
+      {% endfor %}
+      {% endif %}
+      {% if post.tags and post.tags.length > 0 %}
+      {% for tag in post.tags.toArray() %}
+      <category>{{ tag.name }}</category>
+      {% endfor %}
+      {% endif %}
     </item>
     {% endfor %}
   </channel>
