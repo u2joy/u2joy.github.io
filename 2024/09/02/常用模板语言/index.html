@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS: &lt;%&#x3D; variable %&gt; Mustache: &amp;">
+    <meta name="description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS:  &lt;%&#x3D; variable %&gt; Mustache:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用模板语言">
 <meta property="og:url" content="https://u2joy.github.io/2024/09/02/%E5%B8%B8%E7%94%A8%E6%A8%A1%E6%9D%BF%E8%AF%AD%E8%A8%80/index.html">
 <meta property="og:site_name" content="小明的博客">
-<meta property="og:description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS: &lt;%&#x3D; variable %&gt; Mustache: &amp;">
+<meta property="og:description" content="常用的模板语法是模板引擎中用于创建动态内容的核心元素。以下是一些常见的模板语法及其用途，这些语法在多数流行的模板引擎（如 Handlebars、Mustache、EJS 等）中都有类似的概念：  变量插值用于在模板中插入变量的值。  Handlebars: &#123;&#123;variable&#125;&#125; EJS:  &lt;%&#x3D; variable %&gt; Mustache:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-22T03:14:46.309Z">
+<meta property="article:modified_time" content="2025-05-22T07:51:09.236Z">
 <meta property="article:author" content="小明">
-<meta property="article:tag" content="node-lib">
+<meta property="article:tag" content="node">
 <meta name="twitter:card" content="summary">
     
     
@@ -146,7 +146,7 @@
       
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/node-lib/" rel="tag">node-lib</a>
+        <a class="p-category" href="/tags/node/" rel="tag">node</a>
     </div>
 
 
@@ -160,26 +160,20 @@
 <li><p>变量插值<br>用于在模板中插入变量的值。</p>
 <ul>
 <li>Handlebars: <code>&#123;&#123;variable&#125;&#125;</code></li>
-<li>EJS: <code>&lt;%= variable %&gt;</code></li>
+<li>EJS:  <code>&lt;%= variable %&gt;</code></li>
 <li>Mustache: <code>&#123;&#123;variable&#125;&#125;</code></li>
 </ul>
 </li>
 <li><p>条件语句<br>用于根据条件显示不同的内容。</p>
 <ul>
-<li><p>Handlebars:</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">if</span></span> condition&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 其他内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">if</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>EJS:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (condition) &#123; %&gt;</span><br><span class="line">  // 内容</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">  // 其他内容</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Handlebars:<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">if</span></span> condition&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 其他内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">if</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>EJS:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (condition) &#123; %&gt;</span><br><span class="line">  // 内容</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line">  // 其他内容</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>循环&#x2F;迭代<br>用于遍历数组或对象。</p>
 <ul>
-<li><p>Handlebars:</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><span class="template-variable">&#123;&#123;<span class="name">this</span>&#125;&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>EJS:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% items.forEach(function(item) &#123; %&gt;</span><br><span class="line">  &lt;li&gt;&lt;%= item %&gt;&lt;/li&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure></li>
+<li>Handlebars:<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><span class="template-variable">&#123;&#123;<span class="name">this</span>&#125;&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>EJS:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% items.forEach(function(item) &#123; %&gt;</span><br><span class="line">  &lt;li&gt;&lt;%= item %&gt;&lt;/li&gt;</span><br><span class="line">&lt;% &#125;); %&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>注释<br>用于在模板中添加注释，不会被渲染。</p>
@@ -202,17 +196,13 @@
 </li>
 <li><p>自定义辅助函数<br>使用自定义函数扩展模板功能。</p>
 <ul>
-<li><p>Handlebars:</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name">customHelper</span> argument&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name">customHelper</span>&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>EJS: 可以直接在模板中调用 JavaScript 函数</p>
-</li>
+<li>Handlebars:<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name">customHelper</span> argument&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name">customHelper</span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>EJS: 可以直接在模板中调用 JavaScript 函数</li>
 </ul>
 </li>
 <li><p>块表达式<br>用于创建可复用的模板块。</p>
 <ul>
-<li><p>Handlebars:</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">with</span></span> object&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  </span><span class="template-variable">&#123;&#123;<span class="name">property</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">with</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>Handlebars:<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">with</span></span> object&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  </span><span class="template-variable">&#123;&#123;<span class="name">property</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">with</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>存在性检查<br>检查变量是否存在。</p>
@@ -223,8 +213,7 @@
 </li>
 <li><p>反向迭代<br>当列表为空时执行。</p>
 <ul>
-<li><p>Handlebars:</p>
-<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  列表为空</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
+<li>Handlebars:<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;&#123;#<span class="name"><span class="built_in">each</span></span> items&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  // 内容</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;<span class="keyword">else</span>&#125;&#125;</span><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  列表为空</span></span><br><span class="line"><span class="language-xml"></span><span class="template-tag">&#123;&#123;/<span class="name"><span class="built_in">each</span></span>&#125;&#125;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>原始 HTML<br>插入不经过转义的 HTML。</p>
