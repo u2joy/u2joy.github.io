@@ -863,14 +863,13 @@ body {
 #header-post #toc {
   padding-right: 2rem;
   max-width: 20em;
-  max-height: calc(95vh - 7rem);
+  max-height: calc(100% - 40px);
   text-align: right;
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 10%;
   bottom: 0;
   overflow-y: auto;
-  transform: translateY(-50%);
 }
 #header-post #toc a:hover {
   color: #d480aa;
@@ -1144,15 +1143,6 @@ article header .author {
 }
 article header .postdate {
   display: inline;
-}
-article .content h2:before {
-  position: absolute;
-  top: -4px;
-  left: -1rem;
-  color: #2bbc8a;
-  content: "#";
-  font-weight: bold;
-  font-size: 1.8rem;
 }
 article .content img,
 article .content video {
